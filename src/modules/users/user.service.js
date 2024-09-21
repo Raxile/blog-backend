@@ -22,7 +22,7 @@ const loginUser = async (data) => {
   const isPassword = bcrypt.compareSync(data.password, user.password);
   if (isPassword) {
     const { _id, name, email } = user._doc || user;
-    const token = generateToken({ id: _id, name });
+    const token = generateToken({ id: _id });
     return response(200, 'login successful', { token, id: _id, name, email });
   }
   return response(203, 'Invalid email or password');
