@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  app:
+    image: piyush923/myapp:latest
+    build: 
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DB_URL=mongodb+srv://player:SSjrplc69kbwVP06@cluster1.eiytr.mongodb.net/
+      - SECRET_KEY=SSjrplc69kbwVP06@12354
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

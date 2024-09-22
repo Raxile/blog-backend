@@ -1,3 +1,5 @@
 package-lock.json
 node_modules
 package.json
+Dockerfile
+docker-compose.yml

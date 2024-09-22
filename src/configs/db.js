@@ -1,13 +1,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const DB_URL = process.env.DB_URL.replace(
-  '<db_username>',
-  process.env.DB_USERNAME,
-).replace('<db_password>', process.env.DB_PASSWORD);
-
 const db = () => {
-  mongoose.connect(DB_URL);
+  mongoose.connect(process.env.DB_URL);
   mongoose.connection.on('connected', () => {
     console.log('Database connected');
   });
